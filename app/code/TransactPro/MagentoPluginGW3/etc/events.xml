@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+  <event name="payment_method_assign_data">
+    <observer name="transactpro_data_assign" instance="TransactPro\MagentoPluginGW3\Observer\DataAssignObserver" />
+  </event>
+  <event name="transactpro_checkout_onepage_controller_success_action">
+    <observer name="transactpro_after_order" instance="TransactPro\MagentoPluginGW3\Observer\AfterOrderObserver" />
+  </event>
+</config>

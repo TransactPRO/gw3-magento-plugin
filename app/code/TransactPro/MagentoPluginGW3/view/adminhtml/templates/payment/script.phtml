@@ -1,0 +1,23 @@
+<?php
+
+/** @var TransactPro\MagentoPluginGW3\Block\Payment $block */
+
+$code = $block->escapeHtml($block->getCode());
+?>
+<script>
+  //<![CDATA[
+  require(
+    [
+      'TransactPro_MagentoPluginGW3/js/stripe',
+      'jquery',
+      'domReady!'
+    ], function(tp, $) {
+      var config = <?php /* @noEscape */ echo $block->getPaymentConfig(); ?>,
+        payment,
+        form = $('#payment_form_<?php /* @noEscape */ echo $code; ?>');
+
+      config.active = form.length > 0 && !form.is(':hidden');
+      payment = new tp(config);
+    });
+  //]]>
+</script>

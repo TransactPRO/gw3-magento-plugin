@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <!--define id for frontend route is “standard”-->
+    <router id="standard">
+        <!--Route name-->
+        <route id="transactpro" frontName="transactpro">
+            <!--Module name-->
+            <module name="TransactPro_MagentoPluginGW3" />
+        </route>
+    </router>
+</config>

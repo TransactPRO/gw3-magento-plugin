@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="order_create_billing_form">
+      <action method="setMethodFormTemplate">
+        <argument name="method" xsi:type="string">transactpro</argument>
+        <argument name="template" xsi:type="string">TransactPro_MagentoPluginGW3::form/cc.phtml</argument>
+      </action>
+    </referenceBlock>
+    <referenceBlock name="order_create_billing_form">
+      <action method="setMethodFormTemplate">
+        <argument name="method" xsi:type="string">transactpro_vault</argument>
+        <argument name="template" xsi:type="string">TransactPro_MagentoPluginGW3::form/vault.phtml</argument>
+      </action>
+    </referenceBlock>
+    <referenceBlock name="content">
+      <block name="transactpro_payment_script"
+             as="transactpro_payment_script"
+             template="TransactPro_MagentoPluginGW3::payment/script.phtml"
+             class="TransactPro\MagentoPluginGW3\Block\Payment"
+             after="billing_method"/>
+    </referenceBlock>
+  </body>
+</page>

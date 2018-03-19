@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <section id="payment">
+      <group id="transactpro" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>TransactPro</label>
+        <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Enabled</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="payment_action" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Payment Action</label>
+          <source_model>TransactPro\MagentoPluginGW3\Model\Adminhtml\Source\PaymentAction</source_model>
+        </field>
+        <field id="payment_method" translate="label" type="select" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Payment Method</label>
+          <source_model>TransactPro\MagentoPluginGW3\Model\Adminhtml\Source\PaymentMethod</source_model>
+        </field>
+        <field id="show_cc_form" translate="label" type="select" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Show Credit Card Form?</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="order_status" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>New Order Status</label>
+          <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+        </field>
+        <field id="title" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Title</label>
+        </field>
+        <field id="test_mode" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Test Mode</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="callback_url" translate="label" type="text" sortOrder="43" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Callback Url</label>
+          <frontend_model>TransactPro\MagentoPluginGW3\Model\Adminhtml\Source\CallbackUrl</frontend_model>
+        </field>
+        <field id="return_url" translate="label" type="text" sortOrder="44" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Return Url</label>
+          <frontend_model>TransactPro\MagentoPluginGW3\Model\Adminhtml\Source\ReturnUrl</frontend_model>
+        </field>
+        <field id="account_id" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Account Id</label>
+        </field>
+        <field id="recipient_name" translate="label" type="text" sortOrder="46" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>P2P Recipient Name</label>
+        </field>
+        <field id="recipient_birthdate" translate="label" type="text" sortOrder="47" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>P2P Recipient Birth date</label>
+        </field>
+        <field id="test_secret_key" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Test Secret Key</label>
+        </field>
+        <field id="live_secret_key" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Live Secret Key</label>
+        </field>
+        <field id="currency" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Accepted Currency</label>
+          <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+        </field>
+        <field id="cctypes" translate="label" type="multiselect" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Credit Card Types</label>
+          <source_model>TransactPro\MagentoPluginGW3\Model\Adminhtml\Source\Cctype</source_model>
+        </field>
+        <field id="useccv" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Credit Card Verification</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Payment from Applicable Countries</label>
+          <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+        </field>
+        <field id="specificcountry" translate="label" type="multiselect" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Payment from Specific Countries</label>
+          <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+        </field>
+        <field id="min_order_total" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Minimum Order Total</label>
+        </field>
+        <field id="max_order_total" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Maximum Order Total</label>
+        </field>
+        <field id="sort_order" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Sort Order</label>
+          <frontend_class>validate-number</frontend_class>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>

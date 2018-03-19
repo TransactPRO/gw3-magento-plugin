@@ -1,0 +1,32 @@
+<?php
+
+/** @var TransactPro\MagentoPluginGW3\Block\Form $block */
+
+$code = $block->escapeHtml($block->getMethodCode());
+$ccType = $block->getInfoData('cc_type');
+$ccExpMonth = $block->getInfoData('cc_exp_month');
+$ccExpYear = $block->getInfoData('cc_exp_year');
+?>
+<fieldset class="admin__fieldset payment-method" id="payment_form_<?php /* @noEscape */ echo $code; ?>"
+          style="display:none">
+  <div id="stripe-card-element">
+    <!-- a Stripe Element will be inserted here. -->
+  </div>
+  <?php if($block->isVaultEnabled()): ?>
+    <div class="field-tooltip-content">
+      <input type="checkbox"
+             id="<?php /* @noEscape */ echo $code; ?>_vault"
+             name="payment[is_active_payment_token_enabler]"
+             class="admin__control-checkbox"/>
+      <label class="label" for="<?php /* @noEscape */ echo $code; ?>_vault">
+        <span><?php echo $block->escapeHtml('Save for later use.'); ?></span>
+      </label>
+    </div>
+  <?php endif; ?>
+  <input type="hidden" name="payment[cc_token]" id="<?php echo $code ?>_cc_token" />
+  <input type="hidden" name="payment[expiration]" id="<?php echo $code ?>_expiration" />
+  <input type="hidden" name="payment[expiration_yr]" id="<?php echo $code ?>_expiration_yr" />
+  <input type="hidden" name="payment[cc_type]" id="<?php echo $code ?>_cc_type" />
+
+  <input type="submit" name="Submit" style="display: none;">
+</fieldset>
