@@ -49,6 +49,13 @@ class GeneralResponseValidator extends AbstractValidator
 
         return [
             function ($response) {
+                if (!isset($response['gw']['status-code'])) {
+                    return [
+                        false,
+                        [__($response['error']['message'])]
+                    ];
+                }
+
                 if (in_array($response['gw']['status-code'], self::getValidStatusCodes()) === false) {
                     return [
                         false,

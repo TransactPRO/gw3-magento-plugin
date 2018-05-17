@@ -50,6 +50,15 @@ The Transact Pro gateway currently operates with Euro only! Please, configure yo
 ![](./images/config-01.png)
 ![](./images/currency-01.png)
 
+### Shipping method 
+Make sure that you have at least 1 configured shipping method or setup it as described here: https://www.fastcomet.com/tutorials/magento2/shipping-methods
+
+If you already have defined shipping method then on the checkout page you should see something like that:
+![](./images/checkout-05.png)
+
+If shipping method defined but on the checkout page you don't see form with customer shipping data then you should check that your product is "deliverable", to check that go to admin panel, find the product and go to edit page, you should provide physical parameters for product like "height", "width", "weight" or at least 1 of them:
+![](./images/product-01.png)
+
 ## Transaction handling
 
 ### Executing transaction
